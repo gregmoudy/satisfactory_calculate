@@ -189,7 +189,7 @@ LOOKUP = {
 
 
 ore_per_minute_needed = dict()
-item_to_make = ITEM_CABLE
+item_to_make = ITEM_SMART_PLATING
 
 item_dict = LOOKUP.get(item_to_make)
 print("Item: {0}".format(item_to_make))
@@ -212,3 +212,26 @@ for recipe in item_dict[KEY_RECIPES]:
 
 # TODO:
 # We will need to calculate remaining item waste when things don't break even. User might want to collect it, trash, or feed it to another production line.
+
+
+part_count = dict()
+
+def get_recipe_chain( item ):
+    item_dict = LOOKUP.get(item)
+    #for recipe in item_dict[KEY_RECIPES]:
+    recipe = item_dict[KEY_RECIPES][0]
+    for recipe_item in recipe[KEY_INPUT_ITEMS]:
+        recipe_item_type = recipe_item[0]
+        recipe_item_count = recipe_item[1]
+        recipe_item_part_count = part_count.get(recipe_item_type, 0)
+        recipe_item_part_count += recipe_item_count
+        part_count[recipe_item_type] = recipe_item_part_count
+        get_recipe_chain(recipe_item_type)
+
+
+part_count = dict()
+get_recipe_chain(ITEM_ROTOR)
+
+print('break')
+
+
