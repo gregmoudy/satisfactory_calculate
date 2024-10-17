@@ -62,6 +62,118 @@ LOOKUP = {
             }, 
         ], 
     },
+    ITEM_COPPER_SHEET : { 
+        KEY_MACHINE : MACHINE_CONSTRUCTOR, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 10, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_COPPER_INGOT, 20 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_IRON_INGOT : { 
+        KEY_MACHINE : MACHINE_SMELTER, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 30, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_IRON_ORE, 30 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_IRON_ORE : { 
+        KEY_MACHINE : MACHINE_MINER_MK2, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 120, 
+                KEY_INPUT_ITEMS : [], 
+            }, 
+        ], 
+    },
+    ITEM_IRON_PLATE : { 
+        KEY_MACHINE : MACHINE_CONSTRUCTOR, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 20, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_IRON_INGOT, 30 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_IRON_ROD : { 
+        KEY_MACHINE : MACHINE_CONSTRUCTOR, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 15, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_IRON_INGOT, 15 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_MODULAR_FRAME : { 
+        KEY_MACHINE : MACHINE_ASSEMBLER, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 2, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_REINFORCED_IRON_PLATE, 3 ), 
+                    ( ITEM_IRON_ROD, 12 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_REINFORCED_IRON_PLATE : { 
+        KEY_MACHINE : MACHINE_ASSEMBLER, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 5, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_IRON_PLATE, 30 ), 
+                    ( ITEM_SCREW, 60 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_ROTOR : { 
+        KEY_MACHINE : MACHINE_ASSEMBLER, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 4, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_IRON_ROD, 20 ), 
+                    ( ITEM_SCREW, 100 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_SCREW : { 
+        KEY_MACHINE : MACHINE_CONSTRUCTOR, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 40, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_IRON_ROD, 10 ), 
+                ], 
+            }, 
+        ], 
+    },
+    ITEM_SMART_PLATING : { 
+        KEY_MACHINE : MACHINE_ASSEMBLER, 
+        KEY_RECIPES : [ 
+            { 
+                KEY_OPM : 2, 
+                KEY_INPUT_ITEMS : [ 
+                    ( ITEM_REINFORCED_IRON_PLATE, 2 ), 
+                    ( ITEM_ROTOR, 2 ), 
+                ], 
+            }, 
+        ], 
+    },
     ITEM_WIRE : { 
         KEY_MACHINE : MACHINE_CONSTRUCTOR, 
         KEY_RECIPES : [ 
